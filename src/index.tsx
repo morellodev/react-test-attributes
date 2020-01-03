@@ -13,7 +13,7 @@ const Test: React.FC<TestProps> = ({ id, suffix = 'test-id', children }) => {
     const element = node as React.ReactElement;
 
     if (typeof element.type === 'symbol') {
-      return <div {...{ [`data-${suffix}`]: id }}>{node}</div>;
+      return React.createElement('div', { [`data-${suffix}`]: id }, node);
     } else {
       return React.cloneElement(element, {
         [`data-${suffix}`]: id,
