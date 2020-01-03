@@ -35,6 +35,13 @@
     "email": "dennismorello@gmail.com",
     "url": "https://morello.dev"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dennismorello/react-test-attributes"
+  },
+  "bugs": {
+    "url": "https://github.com/dennismorello/react-test-attributes/issues"
+  },
   "module": "dist/react-test-attributes.esm.js",
   "keywords": [
     "react",
