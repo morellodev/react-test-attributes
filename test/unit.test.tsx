@@ -26,7 +26,28 @@ describe('Basic actions', () => {
       div
     );
 
-    expect(document.querySelector('[data-test-id="title"]')).toBeDefined();
+    expect(div.querySelector('[data-test-id="title"]')).toBeInstanceOf(
+      HTMLHeadingElement
+    );
+
+    ReactDOM.unmountComponentAtNode(div);
+  });
+
+  it('Correctly handles React fragments', () => {
+    const div = document.createElement('div');
+
+    ReactDOM.render(
+      <Test id="title">
+        <React.Fragment>
+          <h1>Title</h1>
+        </React.Fragment>
+      </Test>,
+      div
+    );
+
+    expect(div.querySelector('[data-test-id="title"]')).toBeInstanceOf(
+      HTMLDivElement
+    );
 
     ReactDOM.unmountComponentAtNode(div);
   });
@@ -41,7 +62,9 @@ describe('Basic actions', () => {
       div
     );
 
-    expect(document.querySelector('[data-test="title"]')).toBeDefined();
+    expect(div.querySelector('[data-test="title"]')).toBeInstanceOf(
+      HTMLHeadingElement
+    );
 
     ReactDOM.unmountComponentAtNode(div);
   });
