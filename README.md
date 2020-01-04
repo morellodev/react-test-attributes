@@ -14,6 +14,8 @@
 - [Installation](#installation)
 - [Quick Start](#quick-start)
 - [Usage](#usage)
+  - [API](#api)
+  - [Global Configuration](#global-configuration)
 - [License](#license)
 
 ## Features
@@ -39,7 +41,7 @@ yarn add react-test-attributes
 
 ## Quick Start
 
-Import [React Test Attributes](https://www.npmjs.com/package/react-test-attributes) to your React component:
+Import [React Test Attributes](https://www.npmjs.com/package/react-test-attributes) to your React component (note that, since it is the default export of this package, you can name it whatever you want):
 
 ```js
 import Test from 'react-test-attributes';
@@ -65,10 +67,13 @@ The resulting DOM will be the following, depending on the value of `NODE_ENV` en
 
 ### Usage
 
-You can customize both the name and the value of the `data-*` attribute:
+#### API
 
-- `suffix` is the string to append to `"data-"` when building the attribute name (default to `"test-id"`)
+The `Test` component accepts the following props:
+
 - `id` is the value of the added attribute
+- `suffix` is the string to append to `"data-"` when building the attribute name (default to `"test-id"`)
+- `enableInProductionMode` indicates whether or not adding the test attribute in production mode (default to `false`)
 
 For example, if you want to name the attribute `data-tid` and give it the value `"link-home"` you should write:
 
@@ -76,6 +81,38 @@ For example, if you want to name the attribute `data-tid` and give it the value 
 <Test id="link-home" suffix="tid">
   <a href="/home">Home</a>
 </Test>
+```
+
+#### Global Configuration
+
+The context `TestAttributesConfig` can provide a global configuration to all of its `Test` descendants.
+
+For example, we can globally override the suffix and enable writing the test attributes also in production mode by doing this:
+
+```jsx
+import Test, { TestAttributesConfig } from 'react-test-attributes';
+
+const App = () => {
+  return (
+    <TestAttributesConfig
+      value={{ suffix: 'tid', enableInProductionMode: true }}
+    >
+      <Test id="title">
+        <h1>I am the title</h1>
+      </Test>
+      <Test id="link-home">
+        <a href="/home">Home</a>
+      </Test>
+    </TestAttributesConfig>
+  );
+};
+```
+
+This produces the following DOM:
+
+```html
+<h1 data-tid="title">I am the title</h1>
+<a href="/home" data-tid="link-home">Home</a>
 ```
 
 ## License
