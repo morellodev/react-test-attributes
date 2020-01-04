@@ -1,0 +1,1 @@
+export { TestAttribute } from './TestAttribute';
