@@ -1,7 +1,35 @@
 {
+  "name": "react-test-attributes",
+  "description": "React library to add data-* attributes to DOM elements.",
   "version": "0.4.0",
   "license": "MIT",
+  "author": {
+    "name": "Dennis Morello",
+    "email": "dennismorello@gmail.com",
+    "url": "https://morello.dev"
+  },
+  "keywords": [
+    "react",
+    "dom",
+    "e2e",
+    "data",
+    "test",
+    "testing",
+    "selenium",
+    "cypress",
+    "javascript",
+    "typescript",
+    "attributes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dennismorello/react-test-attributes"
+  },
+  "bugs": {
+    "url": "https://github.com/dennismorello/react-test-attributes/issues"
+  },
   "main": "dist/index.js",
+  "module": "dist/react-test-attributes.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
@@ -28,34 +56,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "react-test-attributes",
-  "description": "React library to add data-* attributes to DOM elements.",
-  "author": {
-    "name": "Dennis Morello",
-    "email": "dennismorello@gmail.com",
-    "url": "https://morello.dev"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dennismorello/react-test-attributes"
-  },
-  "bugs": {
-    "url": "https://github.com/dennismorello/react-test-attributes/issues"
-  },
-  "module": "dist/react-test-attributes.esm.js",
-  "keywords": [
-    "react",
-    "dom",
-    "e2e",
-    "data",
-    "test",
-    "testing",
-    "selenium",
-    "cypress",
-    "javascript",
-    "typescript",
-    "attributes"
-  ],
   "devDependencies": {
     "@testing-library/react": "^9.4.0",
     "@types/jest": "^24.0.25",
