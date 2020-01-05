@@ -1,43 +1,33 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
 import Test, { TestAttributesConfig } from '../src';
 
 describe('Config provider', () => {
   it('Correctly inherits attribute suffix from Provider', () => {
-    const div = document.createElement('div');
-
-    ReactDOM.render(
+    const { container } = render(
       <TestAttributesConfig value={{ suffix: 'tid' }}>
         <Test id="title">
           <h1>Title</h1>
         </Test>
-      </TestAttributesConfig>,
-      div
+      </TestAttributesConfig>
     );
 
-    expect(div.querySelector('[data-tid="title"]')).toBeInstanceOf(
+    expect(container.querySelector('[data-tid="title"]')).toBeInstanceOf(
       HTMLHeadingElement
     );
-
-    ReactDOM.unmountComponentAtNode(div);
   });
 
   it('Correctly handles configuration precedence', () => {
-    const div = document.createElement('div');
-
-    ReactDOM.render(
+    const { container } = render(
       <TestAttributesConfig value={{ suffix: 'tid' }}>
         <Test id="title" suffix="test-inner-id">
           <h1>Title</h1>
         </Test>
-      </TestAttributesConfig>,
-      div
+      </TestAttributesConfig>
     );
 
-    expect(div.querySelector('[data-test-inner-id="title"]')).toBeInstanceOf(
-      HTMLHeadingElement
-    );
-
-    ReactDOM.unmountComponentAtNode(div);
+    expect(
+      container.querySelector('[data-test-inner-id="title"]')
+    ).toBeInstanceOf(HTMLHeadingElement);
   });
 });
