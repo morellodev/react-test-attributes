@@ -16,6 +16,7 @@
 - [Usage](#usage)
   - [API](#api)
   - [Global Configuration](#global-configuration)
+- [Contributing](#contributing)
 - [License](#license)
 
 ## Features
@@ -114,6 +115,10 @@ This produces the following DOM:
 <h1 data-tid="title">I am the title</h1>
 <a href="/home" data-tid="link-home">Home</a>
 ```
+
+## Contributing
+
+If you find any bug or if you have ideas on how to improve this project, you are more than welcome to open issues and/or making pull requests!
 
 ## License
 
