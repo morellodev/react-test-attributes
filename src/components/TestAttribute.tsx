@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as ReactIs from 'react-is';
 import defaultConfig from '../config';
 import { ConfigInterface } from '../types';
 import TestConfigContext from '../test-config-context';
@@ -24,16 +25,18 @@ export const TestAttribute: React.FC<TestAttributeProps> = ({
     const node = React.Children.only(nodes);
     const testAttributeName = `data-${config.suffix}`;
 
-    if (typeof (node as React.ReactElement).type === 'symbol') {
+    if (ReactIs.isFragment(node)) {
       return React.createElement(
         'div',
         { [testAttributeName]: config.id },
         node
       );
-    } else {
+    } else if (ReactIs.isElement(node)) {
       return React.cloneElement(node as React.ReactElement, {
         [testAttributeName]: config.id,
       });
+    } else {
+      return node;
     }
   }
 
