@@ -1,7 +1,7 @@
 {
   "name": "react-test-attributes",
   "description": "React library to add data-* attributes to DOM elements.",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "license": "MIT",
   "author": {
     "name": "Dennis Morello",
