@@ -1,7 +1,7 @@
 import { ConfigInterface } from './types';
 
 const defaultConfig: ConfigInterface = {
-  suffix: 'test-id',
+  suffix: 'testid',
   enableInProductionMode: false,
 };
 

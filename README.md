@@ -60,7 +60,7 @@ The resulting DOM will be the following, depending on the value of `NODE_ENV` en
 
 ```html
 <!-- NODE_ENV != "production" -->
-<button data-test-id="btn-submit">Submit</button>
+<button data-testid="btn-submit">Submit</button>
 
 <!-- NODE_ENV == "production" -->
 <button>Submit</button>
@@ -73,7 +73,7 @@ The resulting DOM will be the following, depending on the value of `NODE_ENV` en
 The `Test` component accepts the following props:
 
 - `id` is the value of the added attribute
-- `suffix` is the string to append to `"data-"` when building the attribute name (default to `"test-id"`)
+- `suffix` is the string to append to `"data-"` when building the attribute name (default to `"testid"`)
 - `enableInProductionMode` indicates whether or not adding the test attribute in production mode (default to `false`)
 
 For example, if you want to name the attribute `data-tid` and give it the value `"link-home"` you should write:

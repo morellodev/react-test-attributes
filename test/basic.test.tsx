@@ -11,14 +11,14 @@ describe('Basic actions', () => {
     );
   });
 
-  it('Correctly sets "data-test-id" attribute', () => {
+  it('Correctly sets "data-testid" attribute', () => {
     const { container } = render(
       <Test id="title">
         <h1>Title</h1>
       </Test>
     );
 
-    expect(container.querySelector('[data-test-id="title"]')).toBeInstanceOf(
+    expect(container.querySelector('[data-testid="title"]')).toBeInstanceOf(
       HTMLHeadingElement
     );
   });
@@ -32,7 +32,7 @@ describe('Basic actions', () => {
       </Test>
     );
 
-    expect(container.querySelector('[data-test-id="title"]')).toBeInstanceOf(
+    expect(container.querySelector('[data-testid="title"]')).toBeInstanceOf(
       HTMLDivElement
     );
   });
