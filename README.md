@@ -84,6 +84,12 @@ For example, if you want to name the attribute `data-tid` and give it the value 
 </Test>
 ```
 
+This produces the following DOM:
+
+```html
+<a href="/home" data-tid="link-home">Home</a>
+```
+
 #### Global Configuration
 
 The context `TestAttributesConfig` can provide a global configuration to all of its `Test` descendants.
